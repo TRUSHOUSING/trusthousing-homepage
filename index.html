@@ -80,6 +80,19 @@
       .grid,.case-grid{grid-template-columns:1fr}.trust-box,.contact-wrap{grid-template-columns:1fr}
       .case-img{height:240px}.contact h2{font-size:34px}.phone{font-size:28px}
     }
+  
+    .quick-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .quick-actions a{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 16px;border-radius:9px;font-weight:800;text-decoration:none}
+    .quick-call{background:#173b63;color:#fff}
+    .quick-sms{background:#1769aa;color:#fff}
+    .quick-kakao{background:#f4c400;color:#172033}
+    .quick-note{font-size:12px;color:#627d98;margin-top:8px}
+    .float{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:9px}
+    .float a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:white;font-size:12px;font-weight:900;box-shadow:0 8px 25px rgba(0,0,0,.2);text-decoration:none}
+    .float .call{background:#173b63}
+    .float .sms{background:#1769aa}
+    .float .talk{background:#f4c400;color:#172033!important}
+
   </style>
 </head>
 <body>
@@ -185,6 +198,12 @@
         <div class="phone">010-2202-5431</div>
         <p style="margin-top:6px;font-size:18px;color:#fff;font-weight:800">대표전화 02-6338-5431</p>
         <p>수도권 내 상담 가능</p>
+        <div class="quick-actions">
+          <a class="quick-call" href="tel:02-6338-5431">📞 대표전화</a>
+          <a class="quick-sms" href="sms:010-2202-5431?body=트러스트하우징%20견적문의입니다.%20이름%3A%20%2F%20시공지역%3A%20%2F%20문의내용%3A">💬 문자상담</a>
+          <a class="quick-kakao" href="https://open.kakao.com/o/syRJV6jd" target="_blank" rel="noopener">💛 카카오톡</a>
+        </div>
+        <p class="quick-note">카카오톡 오픈채팅으로 바로 상담하실 수 있습니다.</p>
       </div>
       <form action="https://formsubmit.co/wlsntus2000@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="[트러스트하우징] 새 견적문의가 접수되었습니다">
@@ -230,7 +249,8 @@
 
 <div class="float">
   <a class="talk" href="#contact">견적</a>
-  <a class="call" href="tel:010-2202-5431">전화</a>
+  <a class="sms" href="sms:010-2202-5431">문자</a>
+  <a class="call" href="tel:02-6338-5431">전화</a>
 </div>
 
 
