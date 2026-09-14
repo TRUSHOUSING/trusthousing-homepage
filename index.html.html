@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="트러스트하우징 - 수도권 내 샷시·창호 교체 전문업체. 아파트, 빌라, 주택, 상가 창호 시공 및 무료 방문견적 상담.">
+  <title>트러스트하우징 | 샷시·창호 전문 시공</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,"Noto Sans KR","Malgun Gothic",sans-serif;color:#172033;background:#fff;line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{background:#0d1728;color:#dbe5f4;font-size:13px}
+    .topbar .container{height:38px;display:flex;justify-content:space-between;align-items:center}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #e9edf3}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:23px;font-weight:900;letter-spacing:-1.5px}
+    .logo span{font-weight:500;color:#54708e}
+    .menu{display:flex;gap:32px;font-size:15px;font-weight:700}
+    .menu a:hover{color:#2563a6}
+    .nav-btn{padding:11px 18px;border-radius:9px;background:#173b63;color:white;font-weight:800;font-size:14px}
+    .hero{min-height:650px;display:flex;align-items:center;background:
+      linear-gradient(90deg,rgba(8,18,32,.88) 0%,rgba(8,18,32,.62) 48%,rgba(8,18,32,.12) 100%),
+      url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85") center/cover}
+    .hero-content{color:white;max-width:680px;padding:90px 0}
+    .eyebrow{display:inline-block;padding:7px 12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;font-size:13px;margin-bottom:22px}
+    h1{font-size:clamp(38px,5vw,66px);line-height:1.12;letter-spacing:-3px;margin-bottom:22px}
+    .hero p{font-size:19px;color:#e5edf6;max-width:590px}
+    .actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 24px;border-radius:10px;font-weight:800}
+    .btn-primary{background:#2f78bd;color:#fff}
+    .btn-light{background:#fff;color:#173b63}
+    section{padding:95px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:42px}
+    .section-head h2{font-size:38px;letter-spacing:-2px;line-height:1.2}
+    .section-head p{color:#687588}
+    .services{background:#f6f8fb}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border:1px solid #e5eaf0;border-radius:16px;padding:30px;transition:.25s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 16px 35px rgba(20,45,75,.1)}
+    .icon{width:48px;height:48px;border-radius:12px;background:#eaf2f9;color:#28649a;display:grid;place-items:center;font-size:22px;margin-bottom:20px}
+    .card h3{font-size:20px;margin-bottom:9px}
+    .card p{color:#687588;font-size:14px}
+    .trust{background:#fff}
+    .trust-box{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .trust-item{padding:32px;border-radius:16px;background:#f7f9fb;border:1px solid #e7ebf0}
+    .num{font-size:13px;font-weight:900;color:#3275ad;margin-bottom:12px}
+    .trust-item h3{font-size:21px;margin-bottom:7px}
+    .trust-item p{color:#687588;font-size:14px}
+    .cases{background:#f6f8fb}
+    .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .case{background:white;border-radius:16px;overflow:hidden;border:1px solid #e5eaf0}
+    .case-img{height:230px;object-fit:cover;width:100%}
+    .case-body{padding:20px}
+    .case-body small{color:#3275ad;font-weight:800}
+    .case-body h3{margin-top:5px}
+    .contact{background:#11243a;color:white}
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+    .contact h2{font-size:42px;line-height:1.25;letter-spacing:-2px;margin-bottom:18px}
+    .contact p{color:#c9d5e2}
+    .phone{font-size:34px;font-weight:900;margin-top:25px}
+    form{background:white;padding:30px;border-radius:18px;color:#172033}
+    label{display:block;font-size:13px;font-weight:800;margin:0 0 6px}
+    input,select,textarea{width:100%;border:1px solid #dbe1e8;border-radius:9px;padding:13px;margin-bottom:15px;font:inherit;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#3275ad}
+    textarea{height:110px;resize:vertical}
+    .form-btn{width:100%;border:0;cursor:pointer;font-size:16px}
+    footer{background:#0b1523;color:#9aaabd;padding:38px 0;font-size:13px}
+    footer strong{color:white;font-size:17px}
+    .float{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:9px}
+    .float a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:white;font-size:12px;font-weight:900;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+    .call{background:#173b63}.talk{background:#f4c400;color:#172033!important}
+    @media(max-width:800px){
+      .topbar{display:none}.menu{display:none}.nav-btn{display:block}
+      nav{height:66px}.hero{min-height:620px;background-position:60% center}
+      .hero-content{padding:70px 0}.hero p{font-size:16px}h1{letter-spacing:-2px}
+      section{padding:70px 0}.section-head{display:block}.section-head h2{font-size:31px;margin-bottom:10px}
+      .grid,.case-grid{grid-template-columns:1fr}.trust-box,.contact-wrap{grid-template-columns:1fr}
+      .case-img{height:240px}.contact h2{font-size:34px}.phone{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>수도권 내 수도권 내 아파트 · 빌라 · 주택 · 상가 창호 전문</span>
+    <span>수도권 내 무료 방문견적</span>
+  </div>
+</div>
+
+<header>
+  <nav class="container">
+    <a class="logo" href="#">트러스트하우징 <span>WINDOW</span></a>
+    <div class="menu">
+      <a href="#service">서비스</a>
+      <a href="#why">시공안내</a>
+      <a href="#cases">시공사례</a>
+      <a href="#contact">견적문의</a>
+    </div>
+    <a class="nav-btn" href="#contact">무료 견적</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">샷시 · 창호 교체 전문</div>
+        <h1>우리 집의 단열과 소음,<br>창호 하나로 달라집니다.</h1>
+        <p>수도권 전 지역 현장 확인부터 견적, 철거·시공, 마감과 A/S까지.<br>꼼꼼하고 정직한 창호 시공을 약속드립니다.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">무료 방문견적 신청</a>
+          <a class="btn btn-light" href="tel:02263385431">전화 상담하기</a>
+          <a class="btn btn-light" href="tel:01022025431">휴대폰 상담</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service" class="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>창호의 모든 것,<br>한 곳에서 상담하세요.</h2>
+        </div>
+        <p>현장 구조와 고객의 필요에 맞춰<br>합리적인 시공 방법을 제안합니다.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">▣</div><h3>샷시 교체</h3><p>노후 창호를 새 창호로 교체하여 단열성과 기밀성을 높여드립니다.</p></article>
+        <article class="card"><div class="icon">⌂</div><h3>베란다 창호</h3><p>베란다 구조와 사용 목적에 맞는 창호를 상담하고 깔끔하게 시공합니다.</p></article>
+        <article class="card"><div class="icon">▤</div><h3>아파트 창호</h3><p>평형과 구조를 고려한 맞춤 견적부터 철거·시공·마감까지 진행합니다.</p></article>
+        <article class="card"><div class="icon">◇</div><h3>유리 교체</h3><p>단창·복층유리·로이유리 등 현장 조건에 맞는 유리 교체를 상담합니다.</p></article>
+        <article class="card"><div class="icon">⊞</div><h3>방충망</h3><p>노후 방충망 교체 및 창호 규격에 맞춘 맞춤 제작·시공을 진행합니다.</p></article>
+        <article class="card"><div class="icon">▥</div><h3>상가·주택 창호</h3><p>상가, 단독주택, 빌라 등 다양한 현장의 신규 및 교체 시공이 가능합니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="trust">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>왜 트러스트하우징일까요?</h2></div>
+        <p>제품만큼 중요한 것은 정확한 현장 확인과 시공입니다.</p>
+      </div>
+      <div class="trust-box">
+        <article class="trust-item"><div class="num">01 · 정확한 견적</div><h3>현장 확인 후 필요한 공사만</h3><p>사진만 보고 대략적인 금액을 제시하기보다 현장을 확인하고 필요한 공사와 시공 방법을 안내합니다.</p></article>
+        <article class="trust-item"><div class="num">02 · 합리적인 상담</div><h3>불필요한 공사는 권하지 않습니다</h3><p>고객의 예산과 현장 조건을 고려해 꼭 필요한 부분을 중심으로 상담합니다.</p></article>
+        <article class="trust-item"><div class="num">03 · 꼼꼼한 시공</div><h3>수평·수직부터 마감까지</h3><p>창호의 성능은 제품뿐 아니라 시공 품질에도 좌우됩니다. 기본부터 꼼꼼하게 확인합니다.</p></article>
+        <article class="trust-item"><div class="num">04 · 사후관리</div><h3>시공 후에도 편하게 상담</h3><p>시공이 끝났다고 끝이 아닙니다. 문제 발생 시 상담을 통해 사후관리까지 도와드립니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="cases">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>시공 사례</h2></div>
+        <p>실제 시공 사진으로 교체 전후를 확인해보세요.</p>
+      </div>
+      <div class="case-grid">
+        <article class="case">
+          <img class="case-img" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="아파트 창호 시공 사례">
+          <div class="case-body"><small>APARTMENT</small><h3>아파트 베란다 창호 교체</h3></div>
+        </article>
+        <article class="case">
+          <img class="case-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="주택 창호 시공 사례">
+          <div class="case-body"><small>HOUSE</small><h3>주택 창호 교체 및 마감</h3></div>
+        </article>
+        <article class="case">
+          <img class="case-img" src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=85" alt="상가 창호 시공 사례">
+          <div class="case-body"><small>COMMERCIAL</small><h3>상가 전면 창호 시공</h3></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container contact-wrap">
+      <div>
+        <div class="eyebrow">FREE ESTIMATE</div>
+        <h2>샷시 교체,<br>먼저 상담받아보세요.</h2>
+        <p>수도권 내 시공 지역과 현장 사진을 남겨주시면 확인 후 상담드리겠습니다.</p>
+        <div class="phone"><a href="tel:01022025431" style="color:#fff">010-2202-5431</a></div>
+        <p style="margin-top:6px;font-size:18px;color:#fff;font-weight:800">대표전화 <a href="tel:0263385431" style="color:#fff;text-decoration:underline">02-6338-5431</a></p>
+        <p>수도권 내 상담 가능</p>
+      </div>
+      <form onsubmit="submitForm(event)">
+        <label for="name">이름</label>
+        <input id="name" required placeholder="트러스트하우징">
+        <label for="phone">연락처</label>
+        <input id="phone" required placeholder="010-2202-5431">
+        <label for="area">시공 지역</label>
+        <input id="area" required placeholder="예: 수원시 영통구">
+        <label for="type">공사 종류</label>
+        <select id="type">
+          <option>샷시 교체</option><option>베란다 창호</option><option>유리 교체</option>
+          <option>방충망</option><option>상가·주택 창호</option><option>기타</option>
+        </select>
+        <label for="message">문의 내용</label>
+        <textarea id="message" placeholder="교체하려는 창호나 현장 상황을 간단히 적어주세요."></textarea>
+        <button class="btn btn-primary form-btn" type="submit">무료 견적 문의하기</button>
+        <a class="btn" style="width:100%;margin-top:10px;background:#fee500;color:#172033" href="#contact">카카오톡 상담은 업체 카카오톡 링크 연결 후 사용</a>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>트러스트하우징 WINDOW</strong>
+    <p style="margin-top:10px">샷시 · 창호 교체 전문 | 아파트 · 빌라 · 주택 · 상가</p>
+    <p style="margin-top:8px">주소 수도권 내</p>
+    <p style="margin-top:8px">© 2026 Trust Housing. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="float">
+  <a class="talk" href="#contact">견적</a>
+  <a class="call" href="tel:02263385431">전화</a>
+</div>
+
+<script>
+function submitForm(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  alert(name + "님, 견적 문의가 접수되었습니다.\\n현재 데모 홈페이지이므로 실제 전송 기능은 업체 연락처/카카오톡/서버와 연결해야 합니다.");
+}
+</script>
+</body>
+</html>
