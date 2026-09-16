@@ -1,0 +1,38 @@
+name: Fix apartment case image
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  fix-apartment-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace first case image
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          blocks = list(re.finditer(r'<article\s+class=["\']case["\'][\s\S]*?</article>', s, re.I))
+          if blocks:
+              b = blocks[0]
+              block = b.group(0)
+              new_block = re.sub(r'(<img\b[^>]*?\bsrc=["\'])[^"\']*(["\'])', r'\1assets/apartment-case-v2.jpg?v=2\2', block, count=1, flags=re.I)
+              if new_block != block:
+                  s = s[:b.start()] + new_block + s[b.end():]
+                  p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "TRUSHOUSING"
+          git config user.email "wlsntus2000@gmail.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+          else
+            git commit -m "Fix apartment case image display"
+            git push
+          fi
