@@ -1,0 +1,38 @@
+name: Apply house case image
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  apply-house-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace second case image
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          blocks = list(re.finditer(r'<article\s+class=["\']case["\'][\s\S]*?</article>', s, re.I))
+          if len(blocks) >= 2:
+              b = blocks[1]
+              block = b.group(0)
+              new_block = re.sub(r'(<img\b[^>]*?\bsrc=["\'])[^"\']*(["\'])', r'\1assets/house-korean.jpg\2', block, count=1, flags=re.I)
+              if new_block != block:
+                  s = s[:b.start()] + new_block + s[b.end():]
+                  p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit if changed
+        run: |
+          git config user.name "TRUSHOUSING"
+          git config user.email "wlsntus2000@gmail.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+          else
+            git commit -m "Apply Korean house image to house case"
+            git push
+          fi
