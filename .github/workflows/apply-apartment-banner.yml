@@ -1,15 +1,15 @@
-name: Fix apartment case image
+name: Apply apartment banner image
 on:
   push:
     branches: [main]
 permissions:
   contents: write
 jobs:
-  fix-apartment-image:
+  apply-apartment-banner:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Replace first case image
+      - name: Set apartment case image
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -20,7 +20,7 @@ jobs:
           if blocks:
               b = blocks[0]
               block = b.group(0)
-              new_block = re.sub(r'(<img\b[^>]*?\bsrc=["\'])[^"\']*(["\'])', r'\1assets/apartment-case-v2.jpg?v=2\2', block, count=1, flags=re.I)
+              new_block = re.sub(r'(<img\b[^>]*?\bsrc=["\'])[^"\']*(['"])', r'\1assets/apartment-banner.jpg\2', block, count=1, flags=re.I)
               if new_block != block:
                   s = s[:b.start()] + new_block + s[b.end():]
                   p.write_text(s, encoding='utf-8')
@@ -33,6 +33,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes needed"
           else
-            git commit -m "Fix apartment case image display"
+            git commit -m "Apply new apartment case banner"
             git push
           fi
